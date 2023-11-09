@@ -28,13 +28,13 @@ test.describe('Items management', () => {
     await herokuapp.verifyExistingItem('Creators: Matt Duffer, Ross Duffer');
   })
 
-  //Should pass after fix
+  //Should pass after fix:  issue reported the create item button is not disable when we didnt attach any file
   test.only('Verify create item button should be disabled without attaching one image file', async () => {
     await herokuapp.completeTextArea(getRandomSentence(1));
     await herokuapp.verifyCreateItemDisabled();
   })
 
-  //Should pass after fix
+  //Should pass after fix. Issue reported: The image mandatory field for the user is not visible
   test('Verify create items mandatory field with "*required" message', async () => {
     await herokuapp.verifyRequireFields(2);
   })
@@ -50,7 +50,7 @@ test.describe('Check description field', () => {
     await herokuapp.open();
   })
 
-  //Should pass after fix
+  //Should pass after fix. Issue reported: We are able to write more than 300 characters in textarea field.
   test('Check max long in description disable the create item button', async () => {
     const longDescription = 'A'.repeat(301);
     const shortDescription = 'Short description';
