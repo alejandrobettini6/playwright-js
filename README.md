@@ -13,3 +13,5 @@ automatically open where you can see user-friendly reports for all test-scenario
 - Troubleshooting:
 
 If the report is not automatically open please run `npx playwright show-report`
+
+The first time you run the project the npm install command maybe does not install the executable browser, in that case run `npx playwright install`
